@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="#">Employee Management System</a>
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <button class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#addEmployee">
+        <button class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#addEmployee">
           Add Employee
         </button>
       </div>
@@ -18,36 +18,36 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Employee</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form [formGroup]="empDetail">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+              <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Salary</label>
-                <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="text" formControlName="salary" class="form-control" id="salary" aria-describedby="emailHelp">
                 </div>
         
          
           <!--<button type="submit" class="btn btn-primary">Submit</button>-->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Add</button>
+            <button type="button" class="btn btn-primary" (click)="addEmployee()">Add Employee</button>
           </div>
 
 
 
         </form>
 
-        ...
+      
       </div>
      
     </div>
