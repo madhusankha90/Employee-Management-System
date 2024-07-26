@@ -13,7 +13,7 @@ import { EmployeeService } from '../../service/employee.service';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule, HttpClientModule, CommonModule],
   providers: [EmployeeService],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
