@@ -13,14 +13,15 @@ export class EmployeeService {
 
   constructor(private http : HttpClient) {
 
-    this.addEmpURL = 'http://localhost:8080/addEmployee' ;
-    this.getEmpURL = 'http://localhost:8080/getAllEmployees' ;  // replace with your backend API endpoint  }
-   
-  }
+    this.addEmpURL = 'http://localhost:8080/emp/addEmployee' ;
+    this.getEmpURL = 'http://localhost:8080/emp/getAllEmployees' ;  // replace with your backend API endpoint  }
+   }
 
   addEmployee(emp : Employee) :Observable<Employee>{
     return this.http.post<Employee>(this.addEmpURL, emp);
   }
 
   getAllEmployee(): Observable<Employee[]>{
+    return this.http.get<Employee[]>(this.getEmpURL);
+  }
 }
