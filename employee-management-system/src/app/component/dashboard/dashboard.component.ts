@@ -65,4 +65,12 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
+  editEmployee() {
+    this.empDetail.controls['id'].setValue(emp.id);
+    this.empDetail.controls['name'].setValue(emp.name);
+    this.empDetail.controls['email'].setValue(emp.email);
+    this.empDetail.controls['salary'].setValue(emp.salary);
+
+  }
 }

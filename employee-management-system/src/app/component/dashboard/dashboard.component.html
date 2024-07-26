@@ -26,18 +26,23 @@
         <th scope="row">1</th>
         <td>Mark</td>
         <td>Otto</td>
-        <td></td>
+        <td>yyy</td>
+        <td>
+         
+           <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editEmployee" (click)="editEmployee()">Edit Employee Details</button>
+            <button type="button" class="btn btn-outline-danger">Delete</button>
+        </td>
       </tr>
       <tr>
         <th scope="row">2</th>
         <td>Jacob</td>
         <td>Thornton</td>
-        <td></td>
+        <td>ddff</td>
       </tr>
       <tr>
         <th scope="row">3</th>
         <td colspan="2">Larry the Bird</td>
-        <td></td>
+        <td>dddd</td>
       </tr>
     </tbody>
   </table>
@@ -71,7 +76,7 @@
           <!--<button type="submit" class="btn btn-primary">Submit</button>-->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="addEmployee()">Add Employee</button>
+            <button type="button" class="btn btn-outline-success" (click)="addEmployee()">Add Employee</button>
           </div>
 
 
@@ -81,6 +86,47 @@
       
       </div>
      
+    </div>
+  </div>
+</div>
+
+
+<!-- Edit employee Modal -->
+<div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Employee Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="empDetail">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Salary</label>
+                <input type="text" formControlName="salary" class="form-control" id="salary" aria-describedby="emailHelp">
+                </div>
+        
+         
+          <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="addEmployee()">Edit Employee</button>
+          </div>
+
+
+
+        </form>
+        
+      </div>
+    
     </div>
   </div>
 </div>
