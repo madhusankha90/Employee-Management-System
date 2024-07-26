@@ -14,6 +14,7 @@ import { EmployeeService } from '../../service/employee.service';
   selector: 'app-dashboard',
   standalone: true,
   imports: [ReactiveFormsModule, HttpClientModule],
+  providers: [EmployeeService],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
