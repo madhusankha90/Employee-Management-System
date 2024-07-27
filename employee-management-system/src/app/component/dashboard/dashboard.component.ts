@@ -31,6 +31,7 @@ export class DashboardComponent implements OnInit {
     this.getAllEmployee();
 
     this.empDetail = this.formBuilder.group({
+      id: [''],
       name: [''],
       email: [''],
       salary: [''],
@@ -66,7 +67,7 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  editEmployee() {
+  editEmployee(emp: Employee) {
     this.empDetail.controls['id'].setValue(emp.id);
     this.empDetail.controls['name'].setValue(emp.name);
     this.empDetail.controls['email'].setValue(emp.email);

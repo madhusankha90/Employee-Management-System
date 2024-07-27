@@ -13,7 +13,7 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) {
     this.addEmpURL = 'http://localhost:8080/emp/addEmployee';
-    this.getEmpURL = 'http://localhost:8080/emp/getAllEmployees'; // replace with your backend API endpoint
+    this.getEmpURL = 'http://localhost:8080/emp/getAllEmployees';
   }
 
   addEmployee(emp: Employee): Observable<Employee> {
