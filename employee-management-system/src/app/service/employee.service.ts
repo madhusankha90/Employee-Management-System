@@ -13,7 +13,7 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) {
     this.addEmpURL = 'http://localhost:8080/emp/addEmployee';
-    this.getEmpURL = 'http://localhost:8080/emp/getAllEmployees';
+    this.getEmpURL = 'http://localhost:8080/emp/getAll';
   }
 
   addEmployee(emp: Employee): Observable<Employee> {
