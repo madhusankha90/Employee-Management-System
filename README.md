@@ -20,12 +20,8 @@ Before you begin, ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (which includes npm)
 - [MongoDB](https://www.mongodb.com/)
 
-## Getting Started
-
-### Backend Setup
-
-1. Clone the repository:
+## Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/employee-management-system.git
-   cd employee-management-system/backend
+   git clone https://github.com/madhusankha90/Employee-Management-System.git
+   
