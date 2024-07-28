@@ -11,7 +11,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // MongoDB connection
-mongoose.connect('mongodb://127.0.0.1:27017/dataset');
+mongoose.connect('mongodb://127.0.0.1:27017/dataset', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 // Employee Schema
 const employeeSchema = new mongoose.Schema({
@@ -41,6 +44,19 @@ app.get('/emp/getAll', async (req, res) => {
     res.status(200).send(employees);
   } catch (error) {
     res.status(500).send(error);
+  }
+});
+
+// Update Employee
+app.put('/emp/updateEmployee', async (req, res) => {
+  try {
+    const emp = await Employee.findByIdAndUpdate(req.body.id, req.body, { new: true });
+    if (!emp) {
+      return res.status(404).send();
+    }
+    res.send(emp);
+  } catch (error) {
+    res.status(400).send(error);
   }
 });
 

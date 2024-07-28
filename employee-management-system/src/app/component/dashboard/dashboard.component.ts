@@ -74,4 +74,18 @@ export class DashboardComponent implements OnInit {
     this.empDetail.controls['salary'].setValue(emp.salary);
 
   }
+
+  updateEmployee() {
+    this.empObj.id = this.empDetail.value.id;
+    this.empObj.name = this.empDetail.value.name;
+    this.empObj.salary = this.empDetail.value.salary;
+    this.empObj.email = this.empDetail.value.email;
+  
+    this.empService.updateEmployee(this.empObj).subscribe(res=>{
+      console.log(res);
+      this.getAllEmployee();
+    },err=>{
+      console.log(err);
+    })
+  }
 }
